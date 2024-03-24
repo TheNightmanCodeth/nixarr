@@ -105,6 +105,13 @@ in {
       '';
     };
 
+    webUIBindAddr = mkOption {
+      type = types.str;
+      default = "192.168.15.1";
+      example = "0.0.0.0";
+      description = "The bind address for webUI";
+    };
+
     vpn.enable = mkOption {
       type = types.bool;
       default = false;
@@ -330,7 +337,7 @@ in {
 
           rpc-bind-address =
             if cfg.vpn.enable
-            then "192.168.15.1"
+            then cfg.webUIBindAddr
             else "0.0.0.0";
           rpc-port = cfg.uiPort;
           rpc-whitelist-enabled = true;
