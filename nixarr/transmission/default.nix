@@ -406,7 +406,7 @@ in {
         }
       ];
     };
-
+/*
     services.nginx = mkIf cfg.vpn.enable {
       enable = true;
 
@@ -428,5 +428,6 @@ in {
         };
       };
     };
+*/
   };
 }
